@@ -11,10 +11,11 @@ public class PermissionManager{
     }
     public String get(){
 
-        return switch (this.mLevel) {
-            case USER -> "USER";
-            case DEVELOPER -> "DEVELOPER";
-            case ADMIN -> "ADMIN";
+        switch (this.mLevel) {
+            case USER: return "USER";
+            case DEVELOPER: return "DEVELOPER";
+            case ADMIN: return "ADMIN";
         };
+        return null;
     }
 }
