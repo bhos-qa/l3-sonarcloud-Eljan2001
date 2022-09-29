@@ -1,22 +1,21 @@
-package org.lab3;
+package org.example;
 
 enum PermissionLevel{
-    ADMIN, DEVELOPER, USER
+    ADMIN,DEVELOPER,USER;
 }
 
-class PermissionManager {
-    private PermissionLevel mCurrentLevel = PermissionLevel.USER;
-
-    public PermissionLevel setLevel(PermissionLevel level){
-        this.mCurrentLevel = level;
-        return this.mCurrentLevel;
+public class PermissionManager{
+    private PermissionLevel mLevel = PermissionLevel.USER;
+    public void set(PermissionLevel level){
+        this.mLevel = level;
     }
+    public String get(){
 
-    public String getLevel() {
-        return switch (this.mCurrentLevel) {
-            case USER -> "User";
-            case DEVELOPER -> "Developer";
-            case ADMIN -> "Admin";
+        switch (this.mLevel) {
+            case USER: return "USER";
+            case DEVELOPER: return "DEVELOPER";
+            case ADMIN: return "ADMIN";
         };
+        return null;
     }
 }

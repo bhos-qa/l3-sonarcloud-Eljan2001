@@ -1,4 +1,4 @@
-package org.lab3;
+package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,8 +25,8 @@ public class PermissionManagerTest {
     @DisplayName("Testing get current level")
     void testGetCurrentLevel() {
         for (PermissionLevel permissionLevel: permissions.keySet()){
-            permissionManager.setLevel(permissionLevel);
-            assertEquals(permissions.get(permissionLevel), permissionManager.getLevel());
+            permissionManager.set(permissionLevel);
+            assertEquals(permissions.get(permissionLevel), permissionManager.get());
         }
     }
 }
